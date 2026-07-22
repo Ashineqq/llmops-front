@@ -1,5 +1,6 @@
 node_modules
 dist
 build
+.vite
 *.md
 pnpm-lock.yaml

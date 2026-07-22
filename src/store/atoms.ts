@@ -29,3 +29,11 @@ export const userAtom = atomWithStorage<User | null>('currentUser', null, {
 });
 
 export const isLoggedInAtom = atom((get) => get(userAtom) !== null);
+
+export type ThemeMode = 'light' | 'dark';
+
+export const themeModeAtom = atomWithStorage<ThemeMode>('themeMode', 'light', {
+  getItem: (key) => (localStorage.getItem(key) as ThemeMode) || 'light',
+  setItem: (key, value) => localStorage.setItem(key, value),
+  removeItem: (key) => localStorage.removeItem(key),
+});
